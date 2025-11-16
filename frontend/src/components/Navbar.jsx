@@ -12,7 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav 
+      className="navbar navbar-expand-lg navbar-dark" 
+      style={{ backgroundColor: 'rgb(10, 25, 47)' }}
+    >
       <div className="container">
         <Link className="navbar-brand" to="/">EchoWire</Link>
         <button

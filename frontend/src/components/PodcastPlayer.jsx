@@ -3,17 +3,17 @@ import styled from "styled-components";
 
 const podcastData = [
   {
-    title: "Podcast Card 1",
+    title: "Podcast",
     episodes: [
       "https://open.spotify.com/embed/episode/4VRWGt3TzPeOstEDjDx0jr",
-      "https://open.spotify.com/embed/episode/3MKdFaBNxY2gnuvhayHDX7",
+     
       "https://open.spotify.com/embed/episode/5kvYCa2ZFauPAh8IlJk0iz",
       "https://open.spotify.com/embed/episode/1LokwWun2z25nMa3rcUfti",
       
     ],
   },
   {
-    title: "Podcast Card 2",
+    title: "Podcast",
     episodes: [
       "https://open.spotify.com/embed/episode/3YmN5SHGaMNt2RsBTwXFpt",
       "https://open.spotify.com/embed/episode/1T8ws1PHZfnZkklweGlNfd",

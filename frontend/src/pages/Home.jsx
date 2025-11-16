@@ -7,14 +7,14 @@ function Home() {
       {/* ✅ HERO SECTION with Video */}
       <section className="hero-section">
         <video autoPlay muted loop className="background-video">
-          <source src="/gaja-video.mp4" type="video/mp4" />
+          <source src="/video.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
         <div className="overlay">
           <h1>
             <strong>CRISIS</strong> TO <strong>RESILIENCE</strong>
-          </h1>
-          <p>
+          </h1><strong>
+<p className="text-dark ">
             At a time when disasters and disruptions are becoming more common
             and catastrophic, <br />
             Global Communities, together with our local partners, equips
@@ -23,6 +23,8 @@ function Home() {
             crises and build long-term resilience in the face of constant
             change.
           </p>
+          </strong>
+          
           <button className="subscribe-button">
             Subscribe for updates on our Crisis To Resilience series
           </button>

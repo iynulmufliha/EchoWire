@@ -1,132 +1,191 @@
-/* Page Background */
+/* Base Styles - Using a light/segmented approach */
 body {
-  background: linear-gradient(135deg, #0f2f3d, #1a3b5c, #125e40);
+  background-color: #f8f9fa; /* Light background for the overall page */
   min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  color: #b0e0e6; /* soft light blue for default text */
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: #343a40; /* Darker text for readability */
 }
 
-/* Glass Cards */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05); /* very subtle glass */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
+/* Global Container Styling (used on the main div in JSX) */
+.impact-wall-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Section Background Colors for Segmentation (NEW) */
+.section-light-gray {
+    background-color: #f0f0f0; /* Light gray background (like gray-200) */
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.section-white {
+    background-color: #ffffff; /* White background */
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Stats Items (Overhauled) */
+.stat-item {
+  text-align: center;
   padding: 20px;
-  transition: all 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border-left: 5px solid #0077CC; /* Accent line */
 }
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
-
-/* Glass Buttons */
-.glass-btn {
-  border-radius: 25px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.05);
-  color: #7fd1c4;
-  font-weight: bold;
-  transition: all 0.3s;
+.stat-item .stat-value {
+  color: #001F3F; /* Deep navy blue */
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.2;
 }
-.glass-btn:hover {
-  background: rgba(255,255,255,0.1);
-  transform: translateY(-2px);
-}
-
-/* Glass Inputs */
-.glass-input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 25px;
-  padding: 8px 12px;
-  color: #b0e0e6;
-}
-.glass-input::placeholder {
-  color: #7fd1c4;
-}
-.glass-input:focus {
-  outline: none;
-  background: rgba(255,255,255,0.1);
+.stat-item .stat-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Stats Card Texts */
-.stats-value {
-  color: #b0e0e6;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.stats-label {
-  color: #7fd1c4;
-  font-size: 0.85rem;
+/* General Impact Card (Forms, Metrics) */
+.impact-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 100%; /* Ensure uniform card height in rows */
 }
 
-/* Stories Carousel */
+/* Forms (Inputs and Button) */
+.industrial-input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #f8f9fa;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.3rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.industrial-input:focus {
+    color: #495057;
+    background-color: #ffffff;
+    border-color: #0077CC;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 204, 0.25);
+}
+
+.industrial-btn {
+  color: #ffffff;
+  background-color: #0077CC; /* Primary brand color */
+  border-color: #0077CC;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+.industrial-btn:hover {
+  color: #ffffff;
+  background-color: #005FA3;
+  border-color: #005FA3;
+}
+
+/* Trivia Options */
+.trivia-option.btn-outline-dark {
+    border-color: #ced4da !important;
+    color: #495057 !important;
+}
+.trivia-option.industrial-btn {
+    background-color: #0077CC !important;
+    border-color: #0077CC !important;
+    color: white !important;
+}
+
+/* Stories Carousel (Scrollable, no controls) */
 .stories-container {
   scroll-behavior: smooth;
+  /* Adds a subtle scrollbar effect for better UX on desktop */
+  scrollbar-width: thin;
+  scrollbar-color: #0077CC #f0f0f0;
+  padding-bottom: 20px !important;
+}
+.stories-container::-webkit-scrollbar {
+    height: 8px;
+}
+.stories-container::-webkit-scrollbar-thumb {
+    background-color: #0077CC;
+    border-radius: 10px;
+}
+.stories-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
 }
 .story-card {
-  min-width: 250px;
-  max-width: 250px;
-  height: 320px;
+  min-width: 280px;
+  max-width: 280px;
+  height: auto;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.story-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
 }
 .story-card img {
-  height: 150px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 6px 6px 0 0;
+  width: 100%;
+  user-select: none;
 }
-.story-card .card-body {
+.story-card-body {
   flex-grow: 1;
-  padding: 10px;
+  padding: 15px;
 }
 .story-title {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #b0e0e6;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #001F3F;
+  margin-bottom: 5px;
 }
 .story-description {
   font-size: 0.85rem;
-  color: #7fd1c4;
+  color: #6c757d;
 }
 
-/* Carousel Buttons */
-.carousel-btn-left, .carousel-btn-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
-  border: none;
-  color: #7fd1c4;
-  font-weight: bold;
-  font-size: 1.2rem;
-  z-index: 10;
-}
-.carousel-btn-left:hover, .carousel-btn-right:hover {
-  background: rgba(0,0,0,0.5);
+/* Hidden carousel buttons (as requested) */
+.carousel-btn {
+  display: none !important;
 }
 
-/* Milestone CTA */
-.milestone-text {
-  color: #b0e0e6;
+/* Volunteer Badge (NEW) */
+.volunteer-badge {
+    background-color: #28a745; /* Success Green */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.milestone-subtext {
-  color: #7fd1c4;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.08); /* very subtle transparency */
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* faint border */
-  backdrop-filter: blur(12px); /* the blur effect */
-  -webkit-backdrop-filter: blur(12px); /* for Safari */
-  padding: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* subtle shadow */
-}
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+.volunteer-badge .fa-check-circle {
+    color: #ffffff;
 }
